@@ -2,13 +2,13 @@ from pydantic import BaseModel, EmailStr, PastDate, Field, FutureDate
 from datetime import datetime, date
 from typing import Optional
 
-class UserModel(BaseModel):
+class ContactModel(BaseModel):
     email: EmailStr
     first_name: str
     last_name: str
     phone_number: str
     day_birthday: PastDate
-class UserResponse(BaseModel):
+class ContactResponse(BaseModel):
     id: int = Field(default=1, ge=1)
     email: EmailStr
     first_name: str

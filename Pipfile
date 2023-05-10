@@ -10,6 +10,12 @@ python-multipart = "*"
 sqlalchemy = "*"
 fastapi = "*"
 jose = "*"
+alembic = "*"
+unicorn = "*"
+uvicorn = "*"
+psycopg2 = "*"
+pydantic = {extras = ["email"], version = "*"}
+python-jose = {extras = ["cryptography"], version = "*"}
 
 [dev-packages]
 

@@ -33,7 +33,7 @@ async def create_user(body:ContactModel, current_user: User = Depends(auth_servi
 
 @router.get("/", response_model=List[ContactResponse])
 async def read_users(skip: int = 0, limit: int = Query(default=10, le=100, ge=10), current_user: User = Depends(auth_service.get_current_user), db: Session = Depends(get_db)):
-    list_contacts = db.query(Contact).filter_by(user_id = current_user.id).offset(skip).limit(limit).all()
+    list_contacts = db.query(Contact).filter(Contact.user_id == current_user.id).offset(skip).limit(limit).all()
     return list_contacts
 
 
